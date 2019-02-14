@@ -73,7 +73,7 @@ ClassList["factotum"] = {
 			source : ["D:FC", 0],
 			minlevel : 2,
 			description : desc([
-				"I use an action to cast a wizard spell up to 1st level using genius points equal to spell lvl",
+				"I use an action to cast a wizard spell up to 1st level using inspiration points equal to spell lvl",
 				"I can cast 2nd level spells at 5th level, 3rd at 9th, 4th at 13th, 5th at 17th"
 				]),
 			action : ["action", ""]
@@ -83,7 +83,7 @@ ClassList["factotum"] = {
 			source : ["D:FC", 0],
 			minlevel : 3,
 			description : desc([
-				"As an action, i spend an inspiration point to make an expedient plea for divine aid.",
+				"As an action, i spend 3 inspiration points to make an expedient plea for divine aid.",
 				"Healing Touch: Heal a creature i touch by my factotum level + Int modifier,",
 				"Repel the Dead: Force all undead in 30ft to make a wisdom saving throw vs my DC.",
 				"If they fail this save, they are turned, and can only spend their turns moving away from me"
@@ -117,8 +117,9 @@ ClassList["factotum"] = {
 			source : ["D:FC", 0],
 			minlevel : 14,
 			description : desc([
-					"Once per long rest, i can add my intelligence modifier to a save that i fail as a reaction",
-					"At 18th Level, the save also becomes an int saving throw, and i re-roll choosing the higher."
+				"As a reaction when i fail a save, i spend 2 inspiration points, and add my int modifier to the save",
+				"At 18th Level, the save also becomes an int saving throw, and i re-roll choosing the higher.",
+				"I can use this ability once per short rest."
 				])
 		},
 		"spark of brilliance" : {
@@ -126,7 +127,8 @@ ClassList["factotum"] = {
 			source : ["D:FC", 0],
 			minlevel : 20,
 			description : desc([
-					"Once per long rest, as an action, I roll a d20 and regain inspiration points equal to the roll"
+					"Once per long rest, as an action, I roll a d20 and gain inspiration points equal to the roll",
+					"if i exceed the maximum, the bonus points subside after 1 minute."
 				]),
 			action : ["action", ""],
 			usages : 1,
@@ -143,16 +145,7 @@ AddSubClass(
 	source : ["D:FC", 0],
 	attacks : [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3], // this has to be part of the main object, it can't be part of a class feature
 	features : {
-		"subclassfeature3" : {
-			name : "Martial Proclivity",
-			source : ["D:FC", 0],
-			minlevel : 3,
-			description : desc([
-					"I gain proficiency with medium armor and shields",
-				]),
-			armor : [false, true, false, true]
-		},
-		"subclassfeature3.1": {
+		"subclassfeature3": {
 			name : "Pinpoint Strike",
 			source : ["D:FC", 8],
 			minlevel : 3,
@@ -161,24 +154,23 @@ AddSubClass(
 					"When I do so, I add my intelligence modifier to the damage roll"
 				])
 		},
-		"subclassfeature7" : {
+		"subclassfeature5" : {
 			name : "Extra Attack",
 			source : ["D:FC", 0],
 			minlevel : 5,
 			description : desc([
 					"I can attack twice when I take the attack action, and 3 times at 11th level"
 				])
-
 		},
-		"subclassfeature11" : {
-			name : "Chink in the Armor",
+		"subclassfeature7" : {
+			name : "Chink in the Armour",
 			source : ["D:FC", 0],
 			minlevel : 7,
 			description : desc([
 					"When I use my Pinpoint strike, I ignore resistance, and treat immunity as resistance"
 				])
 		},
-		"subclassfeature17" : {
+		"subclassfeature15" : {
 			name : "Calculated Blow",
 			source : ["D:FC", 0],
 			minlevel : 15,
